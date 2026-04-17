@@ -1,0 +1,243 @@
+/* Bài 1: Combinators */
+
+/* Tất cả link trong menu điều hướng (kể cả submenu) có màu #1d4ed8 */
+.main-nav ul li a {
+  color: #1d4ed8;
+}
+
+/* Chỉ các mục menu cấp 1 (không tính submenu) có nền #f1f5f9 */
+.main-nav > ul > li > a {
+  background: #f1f5f9;
+}
+
+/* Đoạn văn đầu tiên ngay sau mỗi tiêu đề h2 trong nội dung bài viết có màu #64748b */
+.post-content h2 + p {
+  color: #64748b;
+}
+
+/* Tất cả đoạn văn nằm sau tiêu đề h2 (không cần liền kề) có màu #0f172a */
+
+h2 ~ p {
+  color: #0f172a;
+}
+
+/* Link tác giả trong phần thông tin bài viết có màu #f97316 */
+.post-meta .author a {
+  color: #f97316;
+}
+
+/* Bài 2: CSS Nesting */
+
+.site-main .post {
+  /* Bài viết có nền white */
+  background-color: white;
+
+  /* Tiêu đề bài viết có màu #0f172a */
+  & .post-title {
+    color: #0f172a;
+  }
+
+  /* Khi di chuột vào bài viết, bài viết có nền #f8fafc */
+  &:hover {
+    background-color: #f8fafc;
+
+    /* Khi di chuột vào bài viết, tiêu đề đổi màu #2563eb */
+    & .post-title {
+      color: #2563eb;
+    }
+  }
+
+  /* Bài viết nổi bật (có class featured) có nền #fefce8 */
+  &.featured {
+    background-color: #fefce8;
+  }
+}
+
+/* Bài 3: Interactive Pseudo-classes */
+
+/* Link trong nội dung bài viết: */
+.post-content a {
+  /* Chưa truy cập: màu #2563eb */
+  color: #2563eb;
+
+  /* Đã truy cập: màu #9333ea */
+  &:visited {
+    color: #9333ea;
+  }
+
+  /* Khi di chuột: màu #1e40af */
+  &:hover {
+    color: #1e40af;
+  }
+
+  /* Khi đang nhấn: màu #1e3a8a */
+  &:active {
+    color: #1e3a8a;
+  }
+}
+
+/* Các nút bấm: */
+
+.share-buttons .btn-primary {
+  /* Nút chính có nền #2563eb, chữ white */
+  background-color: #2563eb;
+  color: white;
+
+  /* Khi di chuột vào nút: nền #3b82f6 */
+  &:hover {
+    background-color: #3b82f6;
+  }
+
+  /* Khi nhấn nút: nền #1d4ed8 */
+  &:active {
+    background-color: #1d4ed8;
+  }
+
+  /* Nút bị vô hiệu hóa: nền #94a3b8, chữ #cbd5e1 */
+  &:disabled {
+    background-color: #94a3b8;
+    color: #cbd5e1;
+  }
+}
+
+/* Ô nhập liệu */
+.widget-search input {
+  /* Ô nhập liệu khi được focus có nền #eff6ff */
+  background-color: #eff6ff;
+}
+
+/* Bài 4: Structural Pseudo-classes */
+
+/* Trong bảng so sánh: */
+
+/* Các hàng lẻ có nền #f8fafc */
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: #f8fafc;
+}
+
+/* Các hàng chẵn có nền white */
+.comparison-table tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+/* Hàng đầu tiên (tiêu đề bảng) có nền #0f172a, chữ white */
+
+.comparison-table thead tr {
+  background-color: #0f172a;
+  color: white;
+}
+
+/* Hàng cuối cùng có nền #dbeafe */
+
+.comparison-table tbody tr:last-child {
+  background-color: #dbeafe;
+}
+
+/* Trong danh sách các bước: */
+
+/* Bước đầu tiên có màu #16a34a */
+
+.post-content .steps li {
+  &:first-child {
+    color: #16a34a;
+  }
+
+  &:last-child {
+    color: #dc2626;
+  }
+
+  &:nth-child(3) {
+    color: #fef3c7;
+  }
+}
+
+/* Các widget trong sidebar (trừ widget cuối) có nền white */
+.sidebar {
+  .widget-search,
+  .widget-categories {
+    background-color: white;
+  }
+}
+
+/* Bài 5: Pseudo-elements */
+
+/* Dòng đầu tiên có màu #0f172a */
+.post-content {
+  .lead {
+    color: #0f172a;
+
+    /* Chữ cái đầu tiên có màu #2563eb */
+    &::first-letter {
+      color: #2563eb;
+    }
+  }
+
+  /* Khối trích dẫn thêm dấu ngoặc kép " màu #cbd5e1 ở đầu (dùng ::before với content) */
+  & .quote::before {
+    content: '"';
+    color: #cbd5e1;
+  }
+
+  /* Danh sách các bước có ký hiệu đầu dòng màu #2563eb (dùng ::marker) */
+  & .steps li::marker {
+    color: #2563eb;
+  }
+
+  /* Khi bôi đen text, nền chuyển sang #bfdbfe, chữ #0f172a (dùng ::selection) */
+
+  ::selection {
+    background-color: #bfdbfe;
+    color: #0f172a;
+  }
+}
+
+/* Badge thêm chấm tròn màu #ef4444 ở đầu (dùng ::before với content: "") */
+.post-header .badge::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: #ef4444;
+}
+
+/* Bài 6: Attribute Selectors */
+/* Ô nhập bắt buộc (required) có nền #fffbeb */
+.newsletter-form {
+  input {
+    background-color: #fffbeb;
+  }
+}
+
+/* .Link bắt đầu bằng "https://" có màu #2563eb */
+.resource-list a[href^="https://"] {
+  color: #2563eb;
+}
+
+.main-nav a[href^="https://"] {
+  color: #2563eb;
+}
+
+/* Link tải file PDF có màu #ea580c */
+.resource-list a[href$=".pdf"] {
+  color: #ea580c;
+}
+
+/* Nút có class chứa từ "btn" có nền #e2e8f0 */
+.share-buttons {
+  .btn {
+    background-color: #e2e8f0;
+    color: white;
+  }
+}
+
+/* Phần tử có thuộc tính lang bắt đầu bằng "vi" có màu #0f172a */
+[lang^="vi"] {
+  color: #0f172a;
+}
+
+/* Hàng trong bảng có độ ưu tiên cao (data-priority="high") có nền #fee2e2 */
+.comparison-table tbody tr[data-priority="high"] {
+  background: #fee2e2;
+}
