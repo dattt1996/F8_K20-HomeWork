@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background: #f9fafb;
+        color: #111827;
+      }
+
+      .big-title {
+        background: #f98000;
+        color: #f9fafb;
+      }
+
+      .title {
+        background: #e5e7eb;
+        color: #111827;
+      }
+
+      .checkbox-title {
+        margin-top: 20px;
+      }
+
+      .checkbox-option {
+        margin-top: 20px;
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        background: #eef2ff;
+        color: #4b5563;
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+
+      .app {
+        background: #f3f4f6;
+        & p {
+          background: #ffffff;
+          color: #9ca3af;
+          padding: 6px;
+          border-radius: 6px;
+        }
+      }
+
+      label::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #6c63ff;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+      #light:checked ~ .container label[for="light"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #dark:checked ~ .container label[for="dark"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #red:checked ~ .container label[for="red"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #blue:checked ~ .container label[for="blue"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #green:checked ~ .container label[for="green"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #vi:checked ~ .container label[for="vi"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #en:checked ~ .container label[for="en"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #advenced:checked ~ .container label[for="advenced"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #eco:checked ~ .container label[for="eco"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #warning:checked ~ .container label[for="warning"]::before {
+        background: #6c63ff;
+        box-shadow: inset 0 0 0 2px white;
+      }
+
+      #light:checked ~ .container label[for="light"] {
+        background: #fff8cc;
+        color: #8b5e00;
+      }
+
+      #light:checked ~ .container .app .light {
+        background: #fff8cc;
+        color: #111827;
+      }
+
+      #dark:checked ~ .container label[for="dark"] {
+        background: #111827;
+        color: #f9fafb;
+      }
+
+      #dark:checked ~ .container .app .dark {
+        background: #111827;
+        color: #f9fafb;
+      }
+
+      #red:checked ~ .container label[for="red"] {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      #red:checked ~ .container .app .red {
+        background: #fee2e2;
+        color: #7f1d1d;
+      }
+
+      #blue:checked ~ .container label[for="blue"] {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      #blue:checked ~ .container .app .blue {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      #green:checked ~ .container label[for="green"] {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      #green:checked ~ .container .app .green {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      #vi:checked ~ .container label[for="vi"] {
+        background: #bbf7d0;
+        color: #166534;
+      }
+
+      #vi:checked ~ .container .app .vi {
+        color: #166534;
+      }
+
+      #en:checked ~ .container label[for="en"] {
+        background: #bfdbfe;
+        color: #1d4ed8;
+      }
+
+      #en:checked ~ .container .app .en {
+        color: #1d4ed8;
+      }
+
+      #advenced:checked ~ .container label[for="advenced"] {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      #advenced:checked ~ .container .app .advenced {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      #eco:checked ~ .container label[for="eco"] {
+        background: #bbf7d0;
+        color: #15803d;
+      }
+
+      #eco:checked ~ .container .app .eco {
+        background: #bbf7d0;
+        color: #166534;
+      }
+
+      #warning:checked ~ .container label[for="warning"] {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+
+      #warning:checked ~ .container .app .warning {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="radio" name="theme" id="light" />
+
+    <input type="radio" name="theme" id="dark" />
+
+    <input type="radio" name="color" id="red" />
+
+    <input type="radio" name="color" id="blue" />
+
+    <input type="radio" name="color" id="green" />
+
+    <input type="radio" name="language" id="vi" />
+
+    <input type="radio" name="language" id="en" />
+
+    <input type="checkbox" name="checkbox" id="advenced" />
+
+    <input type="checkbox" name="checkbox" id="eco" />
+
+    <input type="checkbox" name="checkbox" id="warning" />
+    <div class="container">
+      <h1 class="big-title">Trung tâm cấu hình giao diện (Demo)</h1>
+      <div class="radio-options">
+        <p class="title">Chọn giao diện (Theme)</p>
+        <div class="radio-option">
+          <label for="light">Light</label>
+
+          <label for="dark">Dark</label>
+        </div>
+
+        <div class="radio-option">
+          <p class="title">Chọn màu chủ đạo (Color)</p>
+          <div class="option">
+            <label for="red">Red</label>
+
+            <label for="blue">Blue</label>
+
+            <label for="green">Green</label>
+          </div>
+        </div>
+
+        <div class="radio-option">
+          <p class="title">Chọn ngôn ngữ (Language)</p>
+          <div class="option">
+            <label for="vi">VI</label>
+
+            <label for="en">EN</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkbox-options">
+        <div class="checkbox-title">Tùy chọn bổ sung (Options - Checkbox):</div>
+        <div class="checkbox-option">
+          <label for="advenced">Hiển thị mô tả nâng cao</label>
+
+          <label for="eco">Bật chế độ Eco</label>
+
+          <label for="warning">Hiển thị cảnh báo quan trọng</label>
+        </div>
+      </div>
+
+      <div class="app">
+        <p class="light">Theme Light: Giao diện sáng, chữ đen.</p>
+        <p class="dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+
+        <p class="red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+        <p class="blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+        <p class="green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+
+        <p class="vi">[VI] Xin chào bạn! Khi chọn VI.</p>
+        <p class="en">[EN] Hello world! When EN.</p>
+
+        <p class="advenced">
+          Mô tả dạng nâng cao: Giải thích kĩ hơn về các lựa chọn đang ảnh hưởng
+          đến giao diện
+        </p>
+        <p class="eco">Chế độ Eco: tối ưu giao diện.</p>
+        <p class="warning">Chế độ Advanced: hiển thị nâng cao.</p>
+      </div>
+    </div>
+  </body>
+</html>
