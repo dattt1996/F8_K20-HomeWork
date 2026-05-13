@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-Portfolio</title>
+
+    <link rel="stylesheet" href="/Day6/my-portfolio/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    />
+    <style>
+      nav {
+        margin-left: 350px;
+      }
+      nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+
+      section .hero-background {
+        display: inline-block;
+        margin-top: 50px;
+      }
+
+      section .img-background {
+        width: 100%;
+      }
+
+      section .cta-button a {
+        text-decoration: none;
+        color: red;
+      }
+
+      section .cta-button a:nth-child(2) {
+        margin-left: 10px;
+      }
+
+      section .avatar {
+        margin-top: 50px;
+      }
+
+      section .avatar .img-avatar {
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      section a {
+        text-decoration: none;
+      }
+
+      section .project-01 {
+        margin-top: -50px;
+      }
+
+      section .img-project {
+        width: 100%;
+        margin-top: 40px;
+      }
+
+      footer div a {
+        margin-right: 20px;
+      }
+
+      footer {
+        margin-top: 50px;
+        margin-left: 550px;
+        & p {
+          margin-left: 20px;
+        }
+        & .on-top {
+          display: inline-block;
+          margin-top: 20px;
+          text-decoration: none;
+          color: red;
+          margin-left: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <!-- HEADER -->
+
+    <header>
+      <h1>Trần Đạt</h1>
+      <nav>
+        <ul>
+          <li>
+            <i class="mdi mdi-home"></i>
+            <a href="/Day6/my-portfolio/index.html">Home</a>
+          </li>
+
+          <li>
+            <i class="mdi mdi-account"></i>
+            <a href="/Day6/my-portfolio/pages/about.html">About</a>
+          </li>
+
+          <li>
+            <i class="mdi mdi-lightbulb"></i>
+            <a href="/Day6/my-portfolio/pages/skills.html">Skill</a>
+          </li>
+
+          <li>
+            <i class="mdi mdi-folder"></i>
+            <a href="/Day6/my-portfolio/pages/projects.html">Projects</a>
+          </li>
+
+          <li>
+            <i class="mdi mdi-note-text"></i>
+            <a href="/Day6/my-portfolio/pages/blog.html">Blog</a>
+          </li>
+
+          <li>
+            <i class="mdi mdi-email"></i>
+            <a href="/Day6/my-portfolio/pages/contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section>
+      <div class="hero-background">
+        <img
+          class="img-background"
+          src="images/hero-bg.jpg.jpg"
+          alt="background"
+        />
+      </div>
+
+      <h2>Xin chào mình là <strong>Trần Đạt</strong></h2>
+
+      <p>
+        <em
+          >Mình đang là học viên khóa Fullstack của F8 và mình mong muốn trở
+          thành một Fullstack Developer</em
+        >
+      </p>
+
+      <div class="cta-button">
+        <a href="/Day6/my-portfolio/pages/projects.html">Xem dự án</a>
+        <a href="files/cv.pdf">Tải CV</a>
+      </div>
+    </section>
+
+    <!-- Skills Preview -->
+    <section>
+      <div class="avatar">
+        <img src="images/avatar.jpg.jpg" alt="my-avatar" class="img-avatar" />
+      </div>
+
+      <p>
+        <strong>Mình là Trần Đạt</strong>
+      </p>
+
+      <p>
+        Mình đang học <mark>HTML, CSS</mark> để trở thành Front-end Developer.
+      </p>
+
+      <p>
+        Hiện tại mình đang học
+        <abbr title="HyperText Markup Language">HTML</abbr>,
+        <abbr title="Cascading Style Sheets">CSS</abbr>
+        và
+        <abbr title="JavaScript">JS</abbr>
+        để phát triển kỹ năng lập trình web.
+      </p>
+
+      <p>
+        <em
+          >Mình thích tạo ra nhưng trang web hiện đại và tối ưu cho người
+          dùng</em
+        >
+      </p>
+
+      <a href="/Day6/my-portfolio/pages/about.html">Đọc thêm</a>
+    </section>
+
+    <!-- Skill Preview -->
+    <section>
+      <h2>Kỹ Năng</h2>
+      <div>
+        <i class="mdi mdi-language-html5"></i>
+        <h3>HTML</h3>
+        <p>Xây dựng cấu trúc website</p>
+      </div>
+
+      <div>
+        <i class="mdi mdi-language-css3"></i>
+        <h3>CSS</h3>
+        <p>Thiết kế giao diện web site</p>
+      </div>
+
+      <div>
+        <i class="mdi mdi-language-javascript"></i>
+        <h3>Javascript</h3>
+        <p>Tạo hiệu ứng và tương tác với giao diện</p>
+      </div>
+
+      <a href="pages/skills.html">Xem tất cả kỹ năng</a>
+    </section>
+
+    <!-- PROJECTS PREVIEW -->
+    <section>
+      <h2>Dự án nổi bật</h2>
+      <div class="project-01">
+        <img
+          class="img-project"
+          src="images/img-project-01.jpg"
+          alt="img-project"
+        />
+
+        <h3>Website Automation</h3>
+
+        <p>
+          Landing page hiện đại với giao diện tối giản và phong cách công nghệ.
+        </p>
+
+        <p>
+          Công nghệ:
+          <code>HTML</code>
+          <code>CSS</code>
+          <code>Javascript</code>
+        </p>
+      </div>
+
+      <div class="project-02">
+        <img
+          class="img-project"
+          src="images/img-project-02.jpg"
+          alt="img-project"
+        />
+
+        <h3>Landing Page Builder</h3>
+
+        <p>
+          Landing page hiện đại dành cho startup với thiết kế tối giản và
+          responsive.
+        </p>
+
+        <p>
+          Công nghệ:
+          <code>HTML</code>
+          <code>CSS</code>
+          <code>Javascript</code>
+        </p>
+      </div>
+
+      <div class="project-03">
+        <img
+          src="images/img-project-03.jpg"
+          alt="img-project"
+          class="img-project"
+        />
+
+        <h3>Workspace Website</h3>
+
+        <p>Website quản lý công việc với giao diện tối giản và hiện đại.</p>
+
+        <p>
+          Công nghệ:
+          <code>HTML</code>
+          <code>CSS</code>
+          <code>Javascript</code>
+        </p>
+      </div>
+
+      <a href="pages/projects.html">Xem tất cả các dự án</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Đạt Trần. All rights reserved.</p>
+
+      <div>
+        <a href="#">
+          <i class="mdi mdi-facebook"></i>
+        </a>
+
+        <a href="#">
+          <i class="mdi mdi-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="mdi mdi-twitter"></i>
+        </a>
+
+        <a href="#">
+          <i class="mdi mdi-github"></i>
+          Github
+        </a>
+
+        <a href="#">
+          <i class="mdi mdi-linkedin"></i>
+          LinkedIn
+        </a>
+      </div>
+
+      <!-- Back to top -->
+      <a class="on-top" href="#top"> Lên đầu trang</a>
+    </footer>
+  </body>
+</html>
